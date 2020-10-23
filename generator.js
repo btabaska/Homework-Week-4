@@ -1,5 +1,5 @@
 questionGenerator = () => {
-  clearQuestionDiv();
+  clearOutputDiv("#question");
   if (questionCount >= 20) {
     gameOver = true;
     return;
@@ -27,14 +27,31 @@ choicesGenerator = (item, index) => {
   choiceButton.appendChild(choiceButtonText);
   choiceButton.addEventListener("click", () => {
     if (choiceButton.textContent == questionsObj[questionCount].answer) {
-      alert("You're Right! + 5 Points!");
+      answerGenerator("Correct!", "text-success");
       totalScore += 5;
     } else {
-      alert("You're Wrong! No Points and you lose 5 seconds!");
+      answerGenerator("Incorrect!", "text-danger");
       lastQuestionWrong = true;
     }
     questionCount += 1;
     questionGenerator();
   });
   questionDiv.appendChild(choiceButton);
+};
+
+function answerGenerator(answer, color) {
+  clearOutputDiv("#answer");
+  var answerDiv = document.querySelector("#answer");
+  var answerH3 = document.createElement("h3");
+  answerH3.classList.add(color);
+  var answerH3Text = document.createTextNode(answer);
+  answerH3.appendChild(answerH3Text);
+  answerDiv.appendChild(answerH3);
+}
+
+clearOutputDiv = (selector) => {
+  var div = document.querySelector(selector);
+  while (div.firstChild) {
+    div.removeChild(div.firstChild);
+  }
 };

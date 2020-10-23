@@ -19,7 +19,7 @@ function startTimer(duration, display) {
     }
 
     if (--timer < 0) {
-      alert("Time is Up! \n Your total score is " + totalScore);
+      endScreen();
       clearInterval(x);
     }
   }, 1000);

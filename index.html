@@ -12,7 +12,8 @@
     <title>Javascipt Code Quiz</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light text-center">
+      <h2>Welcome to the Javascript Quiz game!</h2>
       <form class="form-inline">
         <button class="btn btn-outline-success" id="start" type="button">
           Start
@@ -21,14 +22,14 @@
     </nav>
     <div class="card text-center">
       <div class="card-header">
-        <h2>Welcome to the Javascript Quiz game!</h2>
-        <br />You have one minute to answer as many questions as you can!
+        <br />You have one minute to answer as many questions as you can!<br />
+        <div>Time is up in <span id="time">01:00</span></div>
       </div>
       <div class="card-body">
         <div id="question" class="btn-group-vertical"></div>
       </div>
       <div class="card-footer text-muted">
-        <div>Time is up in <span id="time">01:00</span></div>
+        <div id="answer"></div>
       </div>
     </div>
 
