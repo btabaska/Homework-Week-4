@@ -1,5 +1,9 @@
 questionGenerator = () => {
   clearQuestionDiv();
+  if (questionCount >= 20) {
+    gameOver = true;
+    return;
+  }
   var questionDiv = document.querySelector("#question");
   console.log(questionDiv);
   var questionH2 = document.createElement("h2");

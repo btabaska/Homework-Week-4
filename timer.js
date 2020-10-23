@@ -3,6 +3,9 @@ function startTimer(duration, display) {
     minutes,
     seconds;
   var x = setInterval(function () {
+    if (gameOver) {
+      timer = 0;
+    }
     minutes = parseInt(timer / 60, 10);
     seconds = parseInt(timer % 60, 10);
 
