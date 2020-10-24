@@ -6,4 +6,5 @@ homeButton.addEventListener("click", () => {
 var resetButton = document.querySelector("#reset");
 resetButton.addEventListener("click", () => {
   localStorage.clear();
+  clearOutputDiv("#main");
 });
