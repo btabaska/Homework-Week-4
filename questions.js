@@ -38,8 +38,8 @@ var data = [
   },
   {
     question:
-      "Which of the following function of Array object removes the first element from an array and returns that element?",
-    answer: "b",
+      "Which of the following functions of an Array object removes the first element from an array and returns that element?",
+    answer: "shift()",
     choices: ["reverse()", "shift()", "slice()", "pop()"],
   },
   {
@@ -134,7 +134,7 @@ var data = [
   },
   {
     question: "What is a string?",
-    answer: "b",
+    answer: "a primitive value",
     choices: [
       "an object",
       "a bunch of letters and numbers, maybe symbols too",
@@ -154,7 +154,7 @@ var data = [
   },
   {
     question: "What does API Stand for?",
-    answer: "b",
+    answer: "Application Programming Interface",
     choices: [
       "Application Plugin Input",
       "Application Programming Interface",
