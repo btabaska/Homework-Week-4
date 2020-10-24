@@ -14,21 +14,20 @@
   <body>
     <nav class="navbar navbar-light bg-light text-center">
       <form class="form-inline">
-        <button class="btn btn-outline-primary" id="high-scores" type="button">
-          high-scores
+        <button class="btn btn-outline-primary" id="homepage" type="button">
+          Back to Game
         </button>
       </form>
       <h2 class="text-center">Javascript Quiz Game</h2>
       <form class="form-inline">
-        <button class="btn btn-outline-success" id="start" type="button">
-          Start
+        <button class="btn btn-outline-danger" id="reset" type="button">
+          Reset
         </button>
       </form>
     </nav>
     <div class="card text-center">
       <div class="card-header">
-        <br />You have one minute to answer as many questions as you can!<br />
-        <div>Time is up in <span id="time">01:00</span></div>
+        <h1>High Score List</h1>
       </div>
       <div class="card-body">
         <div id="question" class="btn-group-vertical"></div>
@@ -37,7 +36,7 @@
         <div id="answer"></div>
       </div>
     </div>
-    <script type="text/javascript" src="homepagerouter.js"></script>
+    <script type="text/javascript" src="highscorepagerouter.js"></script>
     <script type="text/javascript" src="questions.js"></script>
     <script type="text/javascript" src="generator.js"></script>
     <script type="text/javascript" src="timer.js"></script>

@@ -11,17 +11,6 @@ function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
-var startButton = document.querySelector("#start");
-startButton.addEventListener("click", () => {
-  var oneMinute = totalTime,
-    display = document.querySelector("#time");
-  startTimer(oneMinute, display);
-  gameOver = false;
-  totalScore = 0;
-  questionCount = 0;
-  questionGenerator();
-});
-
 endScreen = () => {
   clearOutputDiv("#question");
   clearOutputDiv("#answer");
@@ -57,6 +46,7 @@ endScreen = () => {
   var endScreenFormSubmitText = document.createTextNode("Submit");
   endScreenFormSubmit.setAttribute("type", "submit");
   endScreenFormSubmit.setAttribute("class", "btn btn-primary");
+  endScreenFormSubmit.setAttribute("id", "scoreSubmitButton");
   endScreenFormSubmit.appendChild(endScreenFormSubmitText);
   endScreenForm.appendChild(endScreenFormDiv);
   endScreenForm.appendChild(endScreenFormSubmit);
@@ -68,4 +58,10 @@ endScreen = () => {
   endScreenCardDiv.appendChild(endScreenForm);
   endScreenCard.appendChild(endScreenCardDiv);
   questionDiv.appendChild(endScreenCard);
+
+  var submitScore = document.querySelector("#scoreSubmitButton");
+  submitScore.addEventListener("click", () => {
+    var usernameInputValue = document.querySelector("#inputText");
+    localStorage.setItem(usernameInputValue.value, totalScore);
+  });
 };
