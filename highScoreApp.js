@@ -3,7 +3,7 @@ var mainUl = document.createElement("ul");
 mainDiv.appendChild(mainUl);
 
 var sortedScores = [];
-
+//pulls in all localstorage and appends them to the sortedscores array
 for (var i in localStorage) {
   if (localStorage.getItem(i) != null) {
     val = localStorage.getItem(i);
@@ -11,12 +11,12 @@ for (var i in localStorage) {
   }
 }
 
+//Sorts all the scores from high to low
 sortedScores.sort(function (a, b) {
   return b[1] - a[1];
 });
 
-console.log(sortedScores);
-
+//generates the HTML to display the scores from high to low. Uses bootstrap for automatic card styling
 generateHighScoreList = (item, index) => {
   mainUl.setAttribute("class", "list-group");
   var mainLi = document.createElement("li");
@@ -25,5 +25,5 @@ generateHighScoreList = (item, index) => {
   mainLi.appendChild(mainLiText);
   mainUl.appendChild(mainLi);
 };
-
+//iterates through all the items in the sorted score array
 sortedScores.forEach(generateHighScoreList);

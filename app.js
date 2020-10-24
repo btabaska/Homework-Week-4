@@ -1,16 +1,19 @@
+//Set up default values for variables used
 var questionsObj = data;
 shuffle(questionsObj);
 var questionCount = 0;
 var gameOver = false;
 var totalScore = 0;
-var totalTime = 60;
+var totalTime = 120;
 var lastQuestionWrong = false;
 console.log(questionsObj[0]);
 
+//used to shuffle the questions every time they are asked.
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
 }
 
+//Creates the HTML for the end screen using Bootstrap classes to get automatic styling
 endScreen = () => {
   clearOutputDiv("#question");
   clearOutputDiv("#answer");
@@ -58,7 +61,7 @@ endScreen = () => {
   endScreenCardDiv.appendChild(endScreenForm);
   endScreenCard.appendChild(endScreenCardDiv);
   questionDiv.appendChild(endScreenCard);
-
+  //Sets up the event listener for the score button to submit
   var submitScore = document.querySelector("#scoreSubmitButton");
   submitScore.addEventListener("click", () => {
     var usernameInputValue = document.querySelector("#inputText");

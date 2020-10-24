@@ -1,3 +1,4 @@
+//All of the questions saved into an object that can be ingested by generator.js
 var data = [
   {
     question: "Inside which HTML element do we put the JavaScript?",
